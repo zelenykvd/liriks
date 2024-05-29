@@ -1,4 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import VueAwesomeSwiper from 'vue-awesome-swiper';
+import 'swiper/swiper-bundle.css';
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(router);
+app.use(VueAwesomeSwiper);
+app.mount('#app');
