@@ -1,9 +1,9 @@
 <template>
   <header class="app-header">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <nav>
       <div class="menu-toggle" @click="toggleMenu">
-        <span v-if="!menuOpen">☰</span>
-        <span v-else>✕</span>
+        <i :class="menuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
       </div>
       <ul :class="{ open: menuOpen }">
         <li><router-link to="/" @click="closeMenu">FEATURED</router-link></li>
@@ -38,7 +38,7 @@ export default {
 <style scoped>
 .app-header {
   background-color: #f9d529;
-  padding: 10px 20px;
+  padding: 20px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -92,6 +92,7 @@ nav ul li a:hover {
     flex-direction: column;
     width: 100%;
     text-align: center;
+    padding: 20px 0;
   }
 
   nav ul.open {
@@ -99,7 +100,7 @@ nav ul li a:hover {
   }
 
   nav ul li {
-    margin: 10px 0;
+    margin: 15px 0;
   }
 
   nav ul li a {
